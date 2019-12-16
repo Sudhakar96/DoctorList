@@ -1,0 +1,30 @@
+{% extends "doctor/base.html" %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.full_name}}
+    {{form.contact}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.d_id}}
+        </div>
+        <div class="col-md-8">
+            {{form.post}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'doctor_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}
